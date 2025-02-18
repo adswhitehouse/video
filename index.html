@@ -15,14 +15,16 @@
 </head>
 
 <body>
+  <div class="preloader"><img src="./media/preloader.gif" alt="preloader"></div>
   <div class="video-container">
-    <video src="./media/video.mp4" autoplay="true" loop="true" muted="true"></video>
+    <video type="video/mp4" src="./media/video.mp4" autoplay loop muted></video>
   </div>
   <h1>Video Project</h1>
-  <div class="control-buttons jsControlButtons">
-    <button class="play jsPlay">Play</button>
-    <button class="pause jsPause">Pause</button>
-  </div>
+  <button class="control-buttons jsControlButtons">
+    <span class="play-pause">Play</span>
+    <span class="play-pause pause">Pause</span>
+    <span class="slider"></span>
+  </button>
   <script src="./script.js"></script>
 </body>
 

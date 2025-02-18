@@ -54,9 +54,12 @@ select {
 
 body {
   font-family: "Be Vietnam Pro", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body::before {
+.video-container::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -87,11 +90,7 @@ body::before {
 }
 
 h1 {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 1;
   color: #fff;
   font-size: 3.5rem;
   text-align: center;
@@ -100,64 +99,52 @@ h1 {
 .control-buttons {
   background-color: #fff;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   bottom: 3rem;
   left: 3rem;
   border-radius: 0.5rem;
-  display: flex;
-  width: 13rem;
-  justify-content: space-between;
-  padding-block: 0.25rem;
-}
-
-.control-buttons::after {
-  content: "";
-  position: absolute;
-  background-color: #5e8d9f;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  border-radius: 0.5rem;
-  left: 0px;
-}
-
-.control-buttons-changed {
-  background-color: #fff;
-  position: absolute;
-  z-index: 2;
-  bottom: 3rem;
-  left: 3rem;
-  border-radius: 0.5rem;
-  display: flex;
-  width: 13rem;
-  justify-content: space-between;
-  padding-block: 0.25rem;
-}
-
-.control-buttons-changed::after {
-  content: "";
-  position: absolute;
-  background-color: #5e8d9f;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  border-radius: 0.5rem;
-  right: 0px;
-}
-
-button {
   border: none;
+  font-size: 1.5rem;
+  padding-block: 0.25rem;
+}
+
+.play-pause {
   cursor: pointer;
   text-transform: uppercase;
   color: #5e8d9f;
-  background-color: transparent;
-  font-size: 1.5rem;
+  padding-inline: 1rem;
+  padding-block: 0.25rem;
 }
 
-.play {
-  padding-left: 1.4rem;
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  border-radius: 0.5rem;
+  background-color: #5e8d9f;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
-.pause {
-  padding-right: 0.8rem;
+.slider-switched {
+  left: 50%;
+}
+
+.preloader {
+  position: absolute;
+  z-index: 10;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  visibility: visible;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide-preloader {
+  visibility: hidden;
+  z-index: -10;
 }
